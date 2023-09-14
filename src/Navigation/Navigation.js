@@ -1,9 +1,10 @@
 import React,{Fragment,useState,useContext} from 'react'
 import { Navbar,Container } from 'react-bootstrap';
 import './Navigation.css'
+import { NavLink } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Context from '../store/Context';
-const Navigation=()=>{
+const Navigation=(props)=>{
   const ctx=useContext(Context)
   const [isCart,setIsCart]=useState(false)
   const onCartHandler=(event)=>{
@@ -12,6 +13,9 @@ const Navigation=()=>{
   }
   const closeCart=()=>{
     setIsCart(false)
+  }
+  const onAboutHandler=()=>{
+    props.onClickAbout()
   }
     return(
       <Fragment>
@@ -23,7 +27,7 @@ const Navigation=()=>{
           <li  className='nav-li'>
           <a href='/' alt=''> Store</a></li>
          <li className='nav-li'>
-         <a href='/' alt=''> About</a></li>
+         <NavLink to='/about' alt='' onClick={onAboutHandler}> About</NavLink></li>
         </ul>
          <a href='/' className='cart-holder' onClick={onCartHandler}>
           Cart
