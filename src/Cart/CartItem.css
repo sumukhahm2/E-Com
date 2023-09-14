@@ -1,0 +1,33 @@
+.cart-image{
+    width:80px;
+    display: flex;
+    margin-bottom: 5px;
+    margin-right: 3px;
+    padding: 0 ;
+}
+.cart-images{
+    display: flex;
+    width:20px;
+   margin-right: 8rem;
+   
+}
+.price{
+    display: flex;
+}
+.cart-input{
+   display: flex;
+    width: 40px;
+    height: 30px;
+    margin: 2px;
+}
+.cart-remove{
+    display: flex;
+    width:75px;
+    height: 30px;
+    background-color: orangered; 
+    color:white;
+    border-radius: 5px;
+}
+.quantity{
+    display: flex;
+}

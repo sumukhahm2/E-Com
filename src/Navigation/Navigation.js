@@ -1,7 +1,18 @@
-import React,{Fragment} from 'react'
+import React,{Fragment,useState,useContext} from 'react'
 import { Navbar,Container } from 'react-bootstrap';
 import './Navigation.css'
+import Cart from '../Cart/Cart';
+import Context from '../store/Context';
 const Navigation=()=>{
+  const ctx=useContext(Context)
+  const [isCart,setIsCart]=useState(false)
+  const onCartHandler=(event)=>{
+    event.preventDefault()
+      setIsCart(true)
+  }
+  const closeCart=()=>{
+    setIsCart(false)
+  }
     return(
       <Fragment>
         <Navbar expand="sm" bg='dark' variant='dark'  >
@@ -14,14 +25,14 @@ const Navigation=()=>{
          <li className='nav-li'>
          <a href='/' alt=''> About</a></li>
         </ul>
-         <a href='/' className='cart-holder'>
+         <a href='/' className='cart-holder' onClick={onCartHandler}>
           Cart
-          <span className='cart-number'></span>
+          <span className='cart-number'>{ctx.totalCartNumber}</span>
          </a>
           </Container>
          
     </Navbar>
-   
+      {isCart && <Cart onClose={closeCart}/>}
        </Fragment>
     );
 }

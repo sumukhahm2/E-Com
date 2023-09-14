@@ -4,9 +4,12 @@ import Navigation from './Navigation/Navigation';
 import { Col,Row,Container, Button } from 'react-bootstrap';
 import ListItems from './ListItems/ListItems';
 import Contact from './Contact/Contact';
+import ContextProvider from './store/ContextProvider';
 function App() {
+ 
+
   return (
-    <React.Fragment>
+    <ContextProvider>
       <header>
      <Navigation/>
      <Container  fluid className=''>
@@ -25,7 +28,7 @@ function App() {
       <Contact/>
      </footer>
       
-    </React.Fragment>
+    </ContextProvider>
   );
 }
 

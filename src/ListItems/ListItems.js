@@ -1,8 +1,13 @@
-import React,{Fragment} from 'react'
+import React,{Fragment,useContext} from 'react'
 import { Container,Col,Row,Image, Button } from 'react-bootstrap';
 import Items from './Items';
+import Context from '../store/Context';
 
 const ListItems=()=>{
+    const ctx=useContext(Context)
+    const addToCartHandler=()=>{
+        ctx.addCart();
+    }
     return(
       <Fragment>
         <Container className='text-center'>
@@ -12,7 +17,7 @@ const ListItems=()=>{
             <Image src={Items[0].imageUrl}></Image>
             <Container>
                 <h6>${Items[0].price}</h6>
-                <Button>Add To Cart</Button>
+                <Button onClick={addToCartHandler}>Add To Cart</Button>
             </Container>
         </Col>
         <Col md={6}>
@@ -20,7 +25,7 @@ const ListItems=()=>{
             <Image src={Items[1].imageUrl}></Image>
             <Container>
             <h6>${Items[1].price}</h6>
-                <Button>Add To Cart</Button>
+                <Button onClick={addToCartHandler}>Add To Cart</Button>
             </Container>
             </Col>
       </Row>
@@ -30,7 +35,7 @@ const ListItems=()=>{
             <Image src={Items[2].imageUrl}></Image>
             <Container>
             <h6>${Items[2].price}</h6>
-                <Button>Add To Cart</Button>
+                <Button onClick={addToCartHandler}>Add To Cart</Button>
             </Container>
             </Col>
         <Col md={6}>
@@ -38,7 +43,7 @@ const ListItems=()=>{
             <Image src={Items[3].imageUrl}></Image>
             <Container>
             <h6>${Items[3].price}</h6>
-                <Button>Add To Cart</Button>
+                <Button onClick={addToCartHandler}>Add To Cart</Button>
             </Container>
             </Col>
       </Row>
