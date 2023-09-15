@@ -1,8 +1,11 @@
 .about-image{
+    float:left;
     width:150px;
     height: 150px;
+    margin:20px 50px;
     border-radius: 80px;
 }
 #about-text{
+    justify-content: center;
     margin: 50px;
 }

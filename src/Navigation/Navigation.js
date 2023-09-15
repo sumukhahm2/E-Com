@@ -14,25 +14,24 @@ const Navigation=(props)=>{
   const closeCart=()=>{
     setIsCart(false)
   }
-  const onAboutHandler=()=>{
-    props.onClickAbout()
-  }
+ 
     return(
       <Fragment>
-        <Navbar expand="sm" bg='dark' variant='dark'  >
+        <Navbar expand="sm" bg='dark' variant='dark' className='nav' >
       <Container fluid className='justify-content-center' >
         <ul className='nav-list'>
           <li  className='nav-li'>
-            <a href='/' alt=''> Home</a></li>
+            <NavLink to='/home' alt='' > Home</NavLink></li>
           <li  className='nav-li'>
-          <a href='/' alt=''> Store</a></li>
+          <NavLink to='/store' alt=''> Store</NavLink></li>
          <li className='nav-li'>
-         <NavLink to='/about' alt='' onClick={onAboutHandler}> About</NavLink></li>
-        </ul>
+         <NavLink to='/about' alt='' > About</NavLink></li>
+       
          <a href='/' className='cart-holder' onClick={onCartHandler}>
           Cart
           <span className='cart-number'>{ctx.totalCartNumber}</span>
          </a>
+         </ul>
           </Container>
          
     </Navbar>

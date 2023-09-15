@@ -2,9 +2,6 @@
   color:aliceblue;
    font-size:5em;
    font-weight: bolder;
+   margin: 1rem;
 }
-.see-cart{
-  color: beige;
-  justify-content: center;
-  text-decoration: none;
-}
+

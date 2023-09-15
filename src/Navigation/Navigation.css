@@ -2,14 +2,21 @@
     color:black;
 }
 .nav-list{
+    padding: 0px;
+    position: fixed;
+    width: 100%;
     display: flex;
-    text-align: center;
+    justify-content: center;
     color: white;
     list-style: none;
-    
-    
+    font-size: 18px;
+    top: 0%;
+    z-index: 1;
+    border-bottom: 0.1rem solid white;
+    background: black;
 }
 .nav-li{
+    
     font-size: 1.5rem;
    padding: 10px;
 }

@@ -1,22 +1,21 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
-import { Col,Row,Container, Button } from 'react-bootstrap';
-import ListItems from './ListItems/ListItems';
+import { Col,Row,Container } from 'react-bootstrap';
 import Contact from './Contact/Contact';
 import ContextProvider from './store/ContextProvider';
 import About from './pages/About';
+import Home from './pages/Home';
+import Store from './pages/Store';
 function App() {
  
-const [isAbout,setIsAbout]=useState(false)
-const aboutHandler=()=>{
-  setIsAbout(true)
-}
+
+
   return (
     <ContextProvider>
       <header>
-     <Navigation onClickAbout={aboutHandler}/>
+     <Navigation  className='nav'/>
      <Container  fluid className=''>
         <Row className='p-2' style={{backgroundColor:'#636363'}}>
           <Col className=' text-center'  ><p className='text'>The Generics</p></Col>
@@ -24,18 +23,16 @@ const aboutHandler=()=>{
       </Container>
      </header>
      <main>
-      {!isAbout && <><ListItems/>
-     <Container className='text-center'>
-      <Button><a href='/' className='see-cart'>See the cart</a></Button>
-     </Container>
-     </>}
-     
-     
-    {isAbout && <><Routes>
+    
+      <Routes>
+      <Route path='/store' element={<Store/>} >
+     </Route>
     <Route path='/about' element={<About/>} >
      </Route>
+    <Route path='/home' element={<Home/>} >
+     </Route>
     </Routes>
-    </>}
+    
      
      </main>
      <footer>
