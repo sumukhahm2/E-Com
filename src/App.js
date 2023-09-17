@@ -8,9 +8,17 @@ import ContextProvider from './store/ContextProvider';
 import About from './pages/About';
 import Home from './pages/Home';
 import Store from './pages/Store';
+import ContactUs from './pages/ContactUs';
 function App() {
  
-
+const contactUsSubmitHandler=async(item)=>{
+   const response= await fetch('https://first-http-c28a3-default-rtdb.firebaseio.com/movies.json',{
+    method:'POST',
+    body:JSON.stringify(item)
+   })
+   const data=await response.json()
+   console.log(data)
+}
 
   return (
     <ContextProvider>
@@ -30,6 +38,8 @@ function App() {
     <Route path='/about' element={<About/>} >
      </Route>
     <Route path='/home' element={<Home/>} >
+     </Route>
+     <Route path='/contactus' element={<ContactUs onSubmit={contactUsSubmitHandler}/>} >
      </Route>
     </Routes>
     

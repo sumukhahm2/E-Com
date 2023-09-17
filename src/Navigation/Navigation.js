@@ -26,7 +26,8 @@ const Navigation=(props)=>{
           <NavLink to='/store' alt=''> Store</NavLink></li>
          <li className='nav-li'>
          <NavLink to='/about' alt='' > About</NavLink></li>
-       
+         <li className='nav-li'>
+         <NavLink to='/contactus' alt='' > Contact Us</NavLink></li>
          <a href='/' className='cart-holder' onClick={onCartHandler}>
           Cart
           <span className='cart-number'>{ctx.totalCartNumber}</span>
