@@ -4,6 +4,10 @@ const Context=React.createContext(
         {
           items:[],
           totalCartNumber:0,
+          LoggedIn:false,
+          token:'',
+          setToken:(token)=>{},
+          deleteToken:()=>{},
           addCart:()=>{},
           deleteCart:(id)=>{}
         }
