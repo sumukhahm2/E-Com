@@ -1,0 +1,17 @@
+.ul{
+    text-align: center;
+    display: grid;
+    columns: 2;
+    grid-template-columns: 100%;
+   grid-template-columns: repeat(2, minmax(0, 0.4fr));
+    list-style: none;
+    padding: 0; margin: 0;
+}
+.li{
+    width: 400px;
+    margin-left: 200px;
+    padding: 10px;
+   
+}
+
+

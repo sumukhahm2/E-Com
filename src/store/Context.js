@@ -3,12 +3,13 @@ import React from 'react'
 const Context=React.createContext(
         {
           items:[],
-          totalCartNumber:0,
+          totalAmount:0,
           LoggedIn:false,
+          userName:'',
           token:'',
-          setToken:(token)=>{},
+          setToken:(item)=>{},
           deleteToken:()=>{},
-          addCart:()=>{},
+          addCart:(item)=>{},
           deleteCart:(id)=>{}
         }
     )

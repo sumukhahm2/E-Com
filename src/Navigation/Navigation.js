@@ -17,6 +17,9 @@ const Navigation=(props)=>{
   const logoutHandler=()=>{
     ctx.deleteToken()
   }
+  const inputAmount=ctx.items.reduce((prev,item)=>{
+    return prev+parseInt(item.amount)
+  },0)
  
     return(
       <Fragment>
@@ -37,7 +40,7 @@ const Navigation=(props)=>{
          <Button variant='danger' onClick={logoutHandler}> Logout</Button></li>}
         {ctx.LoggedIn && <a href='/' className='cart-holder' onClick={onCartHandler}>
           Cart
-          <span className='cart-number'>{ctx.totalCartNumber}</span>
+          <span className='cart-number'>{inputAmount}</span>
          </a>}
          </ul>
           </Container>

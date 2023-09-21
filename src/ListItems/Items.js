@@ -3,7 +3,7 @@
 const Items = [
 
     {
-    
+    id:1,
     title: 'Colors',
     name:'Album 1',
     price: 100,
@@ -13,7 +13,7 @@ const Items = [
     },
     
     {
-    
+    id:2,
     title: 'Black and white Colors',
     name:'Album 2',
     price: 50,
@@ -23,7 +23,7 @@ const Items = [
     },
     
     {
-    
+    id:3,
     title: 'Yellow and Black Colors',
     name:'Album 3',
     price: 70,
@@ -33,7 +33,7 @@ const Items = [
     },
     
     {
-    
+    id:4,
     title: 'Blue Color',
     name:'Album 4',
     price: 100,
@@ -44,6 +44,6 @@ const Items = [
     
     ]
 
-    export default Items
+    export default Items 
     
     

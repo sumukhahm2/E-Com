@@ -49,7 +49,7 @@ const AuthForm=()=>{
        }
        else if(data.idToken)
        {
-        ctx.setToken(data.idToken)
+        ctx.setToken({token:data.idToken,email:data.email})
        }
        emailRef.current.value='';
        passwordRef.current.value='';

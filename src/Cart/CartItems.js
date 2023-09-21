@@ -1,53 +1,14 @@
-import React,{Fragment} from 'react'
+import React,{Fragment,useContext} from 'react'
 import { Row,Col,Image} from 'react-bootstrap';
+import Context from '../store/Context';
 import './CartItem.css'
-const cartElements = [
 
-    {
-    
-    title: 'Colors',
-    name:'Album 1',
-    
-    price: 100,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    
-    quantity: 2,
-    
-    },
-    
-    {
-    
-    title: 'Black and white Colors',
-    name:'Album 2',
-    price: 50,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    
-    quantity: 3,
-    
-    },
-    
-    {
-    
-    title: 'Yellow and Black Colors',
-    name:'Album 3',
-    price: 70,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    
-    quantity: 1,
-    
-    }
-    
-    ]
-    
     
 const CartItems=()=>{
-    
+    const ctx=useContext(Context)
     return(
         <Fragment>
-         {cartElements.map((item)=>{
+         {ctx.items.map((item)=>{
             return(<Row   horizontal className='justify-content-center ' >
             <Col xs lg="2" className='cart-images'>
                 <Image src={item.imageUrl} className='cart-image'/>

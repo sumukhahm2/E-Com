@@ -1,4 +1,4 @@
-import React,{Fragment,useContext} from 'react'
+import React,{Fragment,useContext,useEffect} from 'react'
 import './App.css';
 import { Navigate, Route,Routes } from 'react-router-dom';
 import Navigation from './Navigation/Navigation';
@@ -14,7 +14,9 @@ import AuthForm from './AuthForm/AuthForm';
 import Welcome from './AuthForm/Welcome';
 
 function App() {
- const ctx=useContext(Context)
+
+  const ctx=useContext(Context)
+   
 const contactUsSubmitHandler=async(item)=>{
    const response= await fetch('https://first-http-c28a3-default-rtdb.firebaseio.com/movies.json',{
     method:'POST',
